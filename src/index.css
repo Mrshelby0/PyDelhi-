@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* design tokens */
+:root{
+  /* Python / EuroPython-inspired theme tokens */
+  --peach: #F6E7DB;
+  --lavender: #E9E7F6;
+  --bg: linear-gradient(180deg,var(--peach) 0%, var(--lavender) 52%);
+  --muted:#58606a;
+  --surface:#ffffff;
+  --accent:#3776AB; /* python blue */
+  --accent-2:#FFD43B; /* python yellow */
+  --shadow: 0 20px 40px rgba(16,24,40,0.08);
+}
+
+html,body,#root { height:100%; }
+body {
+  background: var(--bg);
+  color: #0f172a;
+  font-family: 'Poppins', Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* focus ring */
+:focus { outline: 3px solid rgba(79,70,229,0.12); outline-offset:3px; }
+
+/* hero image progressive */
+.hero-img { filter: blur(1px); transition: filter .35s ease; }
+.hero-img.loaded { filter: none; }
+
+/* small python-logo helper */
+.py-logo { width:36px; height:36px; display:inline-block }
+.py-chip { background: linear-gradient(90deg,var(--accent), #24618a); color: white }
+
+/* Updates cards like EuroPython */
+.update-card{ border: 1px solid rgba(11,18,30,0.04); transition: transform .18s ease, box-shadow .18s ease }
+.update-card:hover{ transform: translateY(-6px); box-shadow: var(--shadow) }
+
+/* subtle section background to match inspiration */
+.section-hero-muted{ background: linear-gradient(180deg, #f5efe9 0%, #f2eef1 100%);} 
+
+/* Decorative hero icons (absolute positioned svgs) */
+.hero-decor svg{ opacity:0.9 }
+.hero-decor .ico-1{ position:absolute; top:12px; left:18px; width:42px; height:42px; transform:rotate(-8deg)}
+.hero-decor .ico-2{ position:absolute; top:40px; right:36px; width:36px; height:36px; transform:rotate(12deg)}
+.hero-decor .ico-3{ position:absolute; bottom:36px; left:28px; width:30px; height:30px}
+.hero-decor .ico-4{ position:absolute; bottom:18px; right:18px; width:44px; height:44px}
+
+/* Updates card image placeholder */
+.update-media{ height:120px; display:flex; align-items:center; justify-content:center; background: linear-gradient(135deg, rgba(55,118,171,0.06), rgba(255,212,59,0.06)); border-top-left-radius:12px; border-top-right-radius:12px }
+
+/* ---------- Creative/energetic extras ---------- */
+:root{
+  --blob-1: radial-gradient(60% 60% at 20% 20%, rgba(55,118,171,0.2), transparent 30%);
+  --blob-2: radial-gradient(60% 60% at 80% 80%, rgba(255,212,59,0.18), transparent 30%);
+}
+
+.glass { background: linear-gradient(135deg, rgba(255,255,255,0.75), rgba(255,255,255,0.55)); box-shadow: 0 8px 32px rgba(11,18,30,0.1); border-radius: 16px; backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,0.9); }
+
+/* floating blobs with enhanced animation */
+.blob { position:absolute; pointer-events:none; filter: blur(24px); opacity:0.95; transform: translateZ(0); }
+.blob.b1{ width:400px; height:400px; left:-120px; top:-100px; background: var(--blob-1); animation: floatX 12s ease-in-out infinite alternate; }
+.blob.b2{ width:300px; height:300px; right:-80px; top:20px; background: var(--blob-2); animation: floatY 14s ease-in-out infinite alternate; }
+
+@keyframes floatX{ from{transform:translateX(0) rotate(-8deg) scale(0.95)} to{transform:translateX(30px) rotate(8deg) scale(1.05)} }
+@keyframes floatY{ from{transform:translateY(0) rotate(0deg) scale(1)} to{transform:translateY(-25px) rotate(8deg) scale(1.08)} }
+
+/* pill CTA style with glow */
+.pill-cta{ display:inline-flex; align-items:center; gap:10px; padding:14px 24px; border-radius:999px; font-weight:600; transition: all .3s cubic-bezier(.2,.9,.3,1); position:relative; }
+.pill-cta::before{ content:''; position:absolute; inset:0; border-radius:999px; background:inherit; filter:blur(8px); opacity:0; z-index:-1; transition: opacity .3s }
+.pill-cta:hover::before{ opacity:0.6 }
+.pill-cta.icon-left svg{ width:20px; height:20px }
+.pill-cta.secondary{ background:transparent; border:1.5px solid rgba(55,118,171,0.3); }
+.pill-cta.secondary:hover{ border-color:var(--accent); background:rgba(55,118,171,0.08) }
+
+/* stat chip animation */
+.stat-chip{ transition: all .3s cubic-bezier(.2,.9,.3,1); border-radius:12px }
+.stat-chip:hover{ transform: translateY(-8px) scale(1.04); box-shadow: 0 28px 60px rgba(55,118,171,0.15) }
+
+/* speaker card tilt with enhanced 3D */
+.speaker-tilt{ transition: all .3s cubic-bezier(.2,.9,.3,1); transform-origin:center; }
+.speaker-tilt:hover{ transform: perspective(1000px) rotateX(6deg) rotateY(-8deg) translateY(-8px) scale(1.02); box-shadow: 0 40px 80px rgba(55,118,171,0.2) }
+
+/* nice shadows for large elements */
+.soft-shadow{ box-shadow: 0 24px 60px rgba(11,18,30,0.12) }
+.hard-shadow{ box-shadow: 0 40px 80px rgba(55,118,171,0.18) }
+
+/* subtle entrance with stagger */
+.enter-up{ transform: translateY(20px); opacity:0; animation: enterUp .7s cubic-bezier(.2,.9,.3,1) forwards }
+@keyframes enterUp{ to{ transform:translateY(0); opacity:1 } }
+
+/* snake animation */
+.animated-snake{ width:140px; height:140px; opacity:0.7; animation: slither 6s cubic-bezier(.4,.1,.2,.9) infinite }
+@keyframes slither{ 
+  0%{ transform:translateX(-40px) translateY(0) rotate(-12deg) }
+  25%{ transform:translateX(0) translateY(-30px) rotate(0deg) }
+  50%{ transform:translateX(40px) translateY(0) rotate(12deg) }
+  75%{ transform:translateX(0) translateY(30px) rotate(0deg) }
+  100%{ transform:translateX(-40px) translateY(0) rotate(-12deg) }
+}
+
+/* counter animation */
+.counter-pulse{ animation: pulse 2s cubic-bezier(.4,.1,.2,.9) }
+@keyframes pulse{ 
+  0%{ transform:scale(1) }
+  50%{ transform:scale(1.1) }
+  100%{ transform:scale(1) }
+}
+
+/* gradient text */
+.gradient-text{ background: linear-gradient(90deg, var(--accent), var(--accent2)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+/* glow effect */
+.glow{ position:relative; }
+.glow::after{ content:''; position:absolute; inset:-4px; border-radius:inherit; background: radial-gradient(circle, rgba(55,118,171,0.3), transparent 70%); filter:blur(8px); opacity:0; transition:opacity .3s; z-index:-1; }
+.glow:hover::after{ opacity:1 }
+
+/* marquee animation */
+@keyframes slideX { from { transform: translateX(0);} to { transform: translateX(-50%);} }
+.marquee-anim { animation: slideX 22s linear infinite; }
+@media (prefers-reduced-motion: reduce){ .marquee-anim { animation: none; } }
+@media (max-width:720px){ .marquee-anim { animation-play-state: paused; } }
