@@ -1,0 +1,75 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Dependencies
+node_modules
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Production build
+dist
+dist-ssr
+build
+*.local
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+.project
+.classpath
+.c9/
+*.cer
+*.csr
+*.jks
+
+# IDE
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.swp
+*.swo
+*~
+.vscode/
+.sublime-project
+.sublime-workspace
+
+# OS specific
+Thumbs.db
+.DS_Store
+.AppleDouble
+.LSOverride
+*.pem
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Build artifacts
+*.egg-info/
+dist/
+build/
+*.pyc
+__pycache__/
+
+# Testing
+coverage/
+.nyc_output/
+junit.xml
+
