@@ -26,7 +26,7 @@ export default function HeaderPremium({ onToggleMobile }) {
         {/* Logo */}
         <a href="/" className="flex items-center gap-3 group">
           <div className="w-14 h-14 rounded-xl bg-gradient-primary flex items-center justify-center text-white font-bold text-xl group-hover:scale-110 transition-transform">
-            <img src="/src/assets/pydelhi_community_logo.jpeg" alt="PyDelhi Logo" />
+            <img src=" src/assets/pydelhi_community_logo.jpeg" alt="PyDelhi Logo" />
           </div>
           <div>
             <div className="font-bold text-lg text-gradient">PyDelhi</div>
