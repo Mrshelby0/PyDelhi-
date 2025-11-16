@@ -19,7 +19,7 @@ export default function HeroPremium() {
 
   useEffect(() => {
     const img = new Image();
-    img.src = '/python-hero.png';
+    img.src = 'src/assets/python_community_hero.jpg';
     img.onload = () => {
       if (imgRef.current) {
         imgRef.current.src = img.src;
