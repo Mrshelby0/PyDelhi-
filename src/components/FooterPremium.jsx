@@ -1,4 +1,5 @@
 import React from 'react';
+import logo from '../assets/pydelhi_community_logo.jpeg';
 
 export default function FooterPremium() {
   return (
@@ -9,7 +10,7 @@ export default function FooterPremium() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-10 h-10 rounded-lg bg-gradient-primary flex items-center justify-center font-bold">
-                <img src=" /src/assets/pydelhi_community_logo.jpeg" alt="PyDelhi Logo" />
+                <img src={logo} alt="PyDelhi Logo" className="w-full h-full object-cover" loading="lazy" decoding="async" width={40} height={40} />
               </div>
               <span className="font-bold text-xl">PyDelhi</span>
             </div>

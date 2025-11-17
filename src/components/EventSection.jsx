@@ -178,24 +178,6 @@ export default function EventSection() {
             </div>
           ))}
         </div>
-
-        {/* Newsletter CTA */}
-        <div className="mt-20 bg-gradient-to-r from-primary/10 via-accent/10 to-primary/10 rounded-2xl p-12 text-center border-2 border-primary/20">
-          <h3 className="text-2xl font-bold mb-3">Never Miss an Event</h3>
-          <p className="text-lg text-gray-600 mb-6">
-            Subscribe to our newsletter and stay updated with all upcoming PyDelhi events
-          </p>
-          <div className="flex gap-3 max-w-md mx-auto">
-            <input
-              type="email"
-              placeholder="Enter your email"
-              className="flex-1 px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary/50"
-            />
-            <button className="px-8 py-3 rounded-lg bg-gradient-primary text-white font-bold hover:shadow-lg transition-all">
-              Subscribe
-            </button>
-          </div>
-        </div>
       </div>
     </section>
   );

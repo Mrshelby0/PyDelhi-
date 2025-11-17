@@ -4,7 +4,7 @@ export default function MobileNav({ isOpen, onClose }) {
   if (!isOpen) return null;
 
   return (
-    <div className="fixed inset-0 z-40 md:hidden">
+  <div className="fixed inset-0 z-40 md:hidden">
       {/* Backdrop */}
       <div
         className="absolute inset-0 bg-black/50 backdrop-blur-sm"
@@ -12,7 +12,7 @@ export default function MobileNav({ isOpen, onClose }) {
       ></div>
 
       {/* Mobile Menu */}
-      <div className="absolute top-16 right-0 left-4 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
+  <div className="absolute top-16 right-0 left-0 bg-white/95 backdrop-blur-md rounded-2xl shadow-2xl border border-gray-200 overflow-hidden">
         <nav className="flex flex-col">
           <a
             href="#events"
@@ -26,7 +26,7 @@ export default function MobileNav({ isOpen, onClose }) {
             className="px-6 py-4 border-b border-gray-100 hover:bg-primary/5 transition-colors font-medium text-gray-800"
             onClick={onClose}
           >
-            � Team
+            👥 Team
           </a>
           <a
             href="#blog"

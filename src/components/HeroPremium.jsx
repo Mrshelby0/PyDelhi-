@@ -1,5 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useCounter } from '../hooks/useCounter';
+import heroImg from '../assets/3.jpg';
+import slideImg from '../assets/3.jpg';
 
 export default function HeroPremium() {
   const imgRef = useRef();
@@ -18,8 +20,9 @@ export default function HeroPremium() {
   }, []);
 
   useEffect(() => {
+    // Use imported image URL so Vite rewrites it correctly at build time.
     const img = new Image();
-    img.src = '/src/assets/python_community_hero.jpg';
+    img.src = heroImg;
     img.onload = () => {
       if (imgRef.current) {
         imgRef.current.src = img.src;
@@ -94,9 +97,13 @@ export default function HeroPremium() {
           <div className="relative h-full rounded-3xl overflow-hidden shadow-xl border-4 border-white/80 backdrop-blur-sm">
             <img 
               ref={imgRef} 
-              className="w-full h-full object-cover" 
+              className="w-full h-full object-cover hero-img" 
               alt="PyDelhi Community" 
-              src="src/assets/3.jpg" 
+              src={slideImg} 
+              loading="lazy"
+              decoding="async"
+              width={1200}
+              height={800}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
           </div>
