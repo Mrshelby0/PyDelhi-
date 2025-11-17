@@ -8,7 +8,7 @@ const SAMPLE_UPDATES = [
 
 export default function Updates(){
   return (
-    <section className="max-w-6xl mx-auto px-4 mt-10">
+    <section className="max-w-6xl mx-auto px-4">
       <h3 className="text-2xl font-bold text-center">Updates</h3>
       <p className="text-center text-sm text-[var(--muted)] mt-2">Latest community news and calls</p>
 
@@ -38,8 +38,14 @@ export default function Updates(){
               <small className="text-xs text-[var(--muted)]">Updated 3 days ago</small>
             </div>
           </article>
+          
         ))}
       </div>
+      <br />
+      <br />
+      <br />
+
     </section>
+
   );
 }
